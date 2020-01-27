@@ -1,9 +1,6 @@
-# react_get_github_repository
-Get public github repository list of a particular user
-
 # REACT JS PROJECT - GET GITHUB PUBLIC REPOSITORY LIST BY USER ID
 
-It is a simple list of github list. This application is create from create-react-app starter kit.
+It is a simple list of github list of particular user. This application is create from create-react-app starter kit.
 
 # Use of this repository
 
