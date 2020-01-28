@@ -8,7 +8,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = state => {
   return {
-    repos: state.repos
+    repos: state.repos,
+    isLoading: state.isLoading
   };
 };
 

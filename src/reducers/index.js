@@ -1,6 +1,8 @@
 import {
   GET_REPO_LIST_BY_USER_NAME,
-  GET_REPO_LIST_BY_USER_NAME_SUCCESS
+  GET_REPO_LIST_BY_USER_NAME_SUCCESS,
+  GET_REPO_LIST_BY_USER_NAME_ERROR,
+  CLEAN
 } from '../actions';
 
 const initialState = {
@@ -16,13 +18,23 @@ export default function GitRepoApp(state = initialState, action) {
         isLoading: true
       };
     case GET_REPO_LIST_BY_USER_NAME_SUCCESS:
-      console.log(action.payload.repos);
       return {
         ...state,
         repos: action.payload.repos,
         isLoading: false
       };
+    case CLEAN:
+      return {
+        ...state,
+        ...initialState
+    };
+    case GET_REPO_LIST_BY_USER_NAME_ERROR:
+      return {
+        ...state,
+        repos: [],
+        isLoading: false
+      };
     default:
-      return state;
+      return {...state, ...initialState};
   }
 }

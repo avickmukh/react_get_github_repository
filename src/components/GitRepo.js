@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -19,12 +19,6 @@ const useStyles = makeStyles(theme => ({
   repoName: {
     wordBreak: 'break-all',
     fontWeight: 'bold'
-  },
-  img: {
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%'
   }
 }));
 
@@ -48,7 +42,7 @@ function GitRepo({ name, stargazers_count, forks, svn_url }) {
                 <Typography variant="body2" gutterBottom>
                   Star Count: {stargazers_count}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" gutterBottom>
                   Forks Count: {forks}
                 </Typography>
               </Grid>
@@ -73,7 +67,10 @@ function GitRepo({ name, stargazers_count, forks, svn_url }) {
 }
 
 GitRepo.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  stargazers_count:  PropTypes.number.isRequired,
+  forks:  PropTypes.number.isRequired,
+  svn_url: PropTypes.string.isRequired
 };
 
-export default GitRepo;
+export default memo(GitRepo);

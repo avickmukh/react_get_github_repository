@@ -4,16 +4,23 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import GitRepo from './GitRepo';
 import SearchUser from './SearchUser';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
-const GitRepoList = ({ repos, getRepoListByUserName }) => (
+const GitRepoList = ({ repos, getRepoListByUserName, isLoading }) => (
   <>
     <SearchUser getRepoListByUserName={getRepoListByUserName} />
-    <Jumbotron>
+    {
+      isLoading && 
+      <CircularProgress variant="determinate" value={isLoading} color="secondary" />
+    }
+    { repos && 
+    (<Jumbotron>
       <ListGroup>
-        {repos &&
+        {
           repos.map((repo, index) => <GitRepo key={repo.id} {...repo} />)}
       </ListGroup>
-    </Jumbotron>
+    </Jumbotron>)
+    }
   </>
 );
 
@@ -24,7 +31,8 @@ GitRepoList.propTypes = {
       name: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  getRepoListByUserName: PropTypes.func.isRequired
+  getRepoListByUserName: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired
 };
 
 export default GitRepoList;
