@@ -45,6 +45,9 @@ React js , Redux, node js, jest, enzime
      
      npm run build  
 
+# To run the Test Cases 
+     
+     npm test  
         
   # Resources
   Resources for reference:--  
