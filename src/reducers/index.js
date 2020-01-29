@@ -15,7 +15,8 @@ export default function GitRepoApp(state = initialState, action) {
     case GET_REPO_LIST_BY_USER_NAME:
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
+        repos: []
       };
     case GET_REPO_LIST_BY_USER_NAME_SUCCESS:
       return {
@@ -27,7 +28,7 @@ export default function GitRepoApp(state = initialState, action) {
       return {
         ...state,
         ...initialState
-    };
+      };
     case GET_REPO_LIST_BY_USER_NAME_ERROR:
       return {
         ...state,
@@ -35,6 +36,6 @@ export default function GitRepoApp(state = initialState, action) {
         isLoading: false
       };
     default:
-      return {...state, ...initialState};
+      return { ...state, ...initialState };
   }
 }

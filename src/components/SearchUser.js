@@ -30,7 +30,7 @@ let SearchUser = ({ getRepoListByUserName }) => {
           <InputGroup>
             <Form.Control
               type="text"
-              placeholder="Enter User Id"
+              placeholder="Please Enter Github User Id"
               ref={node => {
                 input = node;
               }}

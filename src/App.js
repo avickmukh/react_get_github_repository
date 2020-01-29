@@ -4,11 +4,17 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Route } from 'react-router-dom';
 import GitRepoListContainer from './containers/GitRepoListContainer';
+import HeaderComponent from './components/HeaderComponent';
 
 class App extends Component {
   render() {
     return (
-      <Container>
+      <Container fluid>
+        <Row className="row">
+          <Col xs={12}>
+            <HeaderComponent />
+          </Col>
+        </Row>
         <Row className="row">
           <Col xs={12}>
             <Route exact path="/" component={GitRepoListContainer} />

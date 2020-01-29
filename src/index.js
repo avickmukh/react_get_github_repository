@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import App from './App';
 import GitRepoApp from './reducers';
 import rootSaga from './sagas';
+import './index.css';
 
 const sagaMiddleware = createSagaMiddleware();
 

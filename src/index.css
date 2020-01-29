@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.sweet-loading {
+  background: #ffffff;
+  color: #666666;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: center;
+  padding-top: 25%;
+  opacity: 0.8;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #382853;
+  min-height: 100px !important;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  text-align: left;
+}
